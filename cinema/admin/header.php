@@ -11,38 +11,22 @@ include('../connection.php');
 <!DOCTYPE html>
 <html>
 <head>
-  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="/cinema/css/adminHeader.css" rel="stylesheet">
+
 </head>
 
 <div >
 
   <header >
-    <ul>
-      <li><a href=" index.php">HOME PAGE</a></li>
-      <li><a href="logout.php">LOGOUT</a></li>
-    </ul>
+      <a href=" index.php">Home </a>
+      <a href="add_movies.php">Movies</a>
+      <a href="theatres.php">
+        <i></i> <span>Theatres</span>
+      </a>
+      <a href="add_new_movies.php">
+        <i></i> <span>Comming Soon</span>
+      </a>
+      <a href="logout.php">Log Out</a>
   </header>
-      <ul>
-        <li>
-          <a href="index.php">
-            <i></i> <span>Home</span>
-          </a>
-        </li>
-        
-          <li>
-          <a href="theatres.php">
-            <i></i> <span>Theatres</span>
-          </a>
-        </li>
-        <li>
-          <a href="add_new_movies.php">
-            <i></i> <span>Comming Soon</span>
-          </a>
-        </li>
-        <li>
-          <a href="add_movies.php">Movies</a>
-        </li>
-        
-        
-      </ul>
 </body>

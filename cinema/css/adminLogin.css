@@ -7,5 +7,69 @@
 body {
     background-color: #cecece;
     font-family: 'DM Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
+
+form {
+    background-color: white;
+    border-radius: 9px;
+    /* margin: 0 20rem; */
+    width: 100%;
+    box-shadow: 0 15px 80px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2rem;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+form input {
+    height: 20px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+form button {
+    padding: 0 1rem;
+    background-color: #fed350;
+    border-radius: 9px;
+    color: #000;
+    width: 100px;
+    height: 40px;
+    border: none;
+    margin-top: 1rem;
+}
+
+form label{
+    text-align: left;
+}
+
+form button:hover {
+    background-color: lightcoral;
+
+}
+
+
+.header{
+    font-size: 30px;
+    text-decoration: none;
+    color: #000;
+    padding-bottom: 2rem;
+}
+
+.main-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 20rem;
+}
+
+p{
+    padding: 2rem 0;
+}
+
+
 

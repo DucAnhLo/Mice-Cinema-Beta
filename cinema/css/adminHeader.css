@@ -1,0 +1,24 @@
+body{
+    background-color: #cecece;
+    font-family: 'DM Sans', sans-serif;
+}
+
+header{
+    background-color: #000;
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 5vh;
+    align-items: center;
+    
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 1rem;
+}
+
+header a:hover {
+    background-color: lightcoral;
+}

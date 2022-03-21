@@ -3,15 +3,18 @@ include('header.php');
 ?>
 
 
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="/cinema/css/addMovie.css" rel="stylesheet">
+</head>
 
-
-  <div>
+  <main class="add-movie">
     <section>
       <h1>
         Add Movie
       </h1>
       <ol>
-        <li><a href="index.php"><i></i> Home</a></li>
+        <li><a href="index.php"><i></i> Movie list</a></li>
         <li>Add Movie</li>
       </ol>
     </section>
@@ -24,15 +27,15 @@ include('header.php');
           <form action="process_add_movies.php" method="post" >
             <div>
               <label>Movie Name</label>
-              <input type="text" name="name" />
+              <input placeholder="Enter movie name" type="text" name="name" />
             </div>
             <div>
               <label>Cast</label>
-              <input type="text" name="cast"/>
+              <input placeholder="Enter casts name" type="text" name="cast"/>
             </div>
             <div>
               <label>Description</label>
-              <textarea name="desc"></textarea>
+              <input placeholder="Enter movie description "name="desc"></input>
             </div>
             <div>
               <label>Release Date</label>
@@ -44,7 +47,7 @@ include('header.php');
             </div>
             <div>
               <label>Trailer Youtube Link</label>
-              <input type="text" name="video"/>
+              <input placeholder="Enter movie trailer" type="text" name="video"/>
             </div>
             <div>
               <button type="submit">Add Movie</button>
@@ -54,7 +57,7 @@ include('header.php');
       </div>
 
     </section>
-  </div>
+  </main>
   <?php
 include('footer.php');
 ?>
