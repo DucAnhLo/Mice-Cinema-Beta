@@ -3,7 +3,7 @@ if (!isset($_SESSION['user']))
 {
 	header('location:login.php');
 }
-$qry2 = mysqli_query($con,"SELECT * FROM tbl_movie WHERE movie_id='".$_SESSION['movie']."'");
+$qry2 = mysqli_query($con,"SELECT * FROM movies WHERE movie_id='".$_SESSION['movie']."'");
 $movie = mysqli_fetch_array($qry2);
 ?>
 
@@ -24,10 +24,10 @@ $movie = mysqli_fetch_array($qry2);
 		</div>
 		<table>
 			<?php
-				$s = mysqli_query($con,"SELECT * FROM tbl_shows WHERE s_id='".$_SESSION['show']."'");
+				$s = mysqli_query($con,"SELECT * FROM shows WHERE s_id='".$_SESSION['show']."'");
 				$shw = mysqli_fetch_array($s);
 
-					$t = mysqli_query($con,"SELECT * FROM tbl_theatre WHERE id='".$shw['theatre_id']."'");
+					$t = mysqli_query($con,"SELECT * FROM cinemas WHERE id='".$shw['theatre_id']."'");
 					$theatre = mysqli_fetch_array($t);
 					?>
 					<tr>
@@ -45,9 +45,9 @@ $movie = mysqli_fetch_array($qry2);
 					</td>
 					<td>
 						<?php 
-							$ttm = mysqli_query($con,"SELECT * FROM tbl_show_time WHERE st_id='".$shw['st_id']."'");
+							$ttm = mysqli_query($con,"SELECT * FROM showing_time WHERE st_id='".$shw['st_id']."'");
 							$ttme = mysqli_fetch_array($ttm);
-							$sn = mysqli_query($con, "SELECT * FROM tbl_screens WHERE screen_id='".$ttme['screen_id']."'");
+							$sn = mysqli_query($con, "SELECT * FROM screens WHERE screen_id='".$ttme['screen_id']."'");
 							$screen = mysqli_fetch_array($sn);
 							echo $screen ['screen_name'];
 							?>
@@ -81,7 +81,7 @@ $movie = mysqli_fetch_array($qry2);
 								<?php if($date!=date('Y-m-d',strtotime($_SESSION['dd'] . "+4 days"))){?>
 								<a href="booking.php?date=<?php echo date('Y-m-d',strtotime($date . "+1 days"));?>"><button >></i></button></a>
 								<?php }
-								$av=mysqli_query($con,"select sum(no_seats) from tbl_bookings where show_id='".$_SESSION['show']."' and ticket_date='$date'");
+								$av=mysqli_query($con,"select sum(no_seats) from bookings where show_id='".$_SESSION['show']."' and ticket_date='$date'");
 								$avl=mysqli_fetch_array($av);
 								?>
 							</div>

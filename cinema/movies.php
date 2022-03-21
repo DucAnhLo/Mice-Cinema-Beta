@@ -2,7 +2,7 @@
 	<h2>Films in Cinema</h2>
 	<?php 
 	$today = date("Y-m-d");
-	$qry2 = mysqli_query($con,"SELECT * FROM tbl_movie WHERE status = '0' ORDER BY rand() limit 5");
+	$qry2 = mysqli_query($con,"SELECT * FROM movies WHERE status = '0' ORDER BY rand() limit 10");
 	while ($m=mysqli_fetch_array($qry2))
 	{
 		?>

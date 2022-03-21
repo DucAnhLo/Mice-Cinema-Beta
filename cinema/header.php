@@ -6,48 +6,10 @@ date_default_timezone_get("Europe/London");
 
 <!DOCTYPE html>
 <html>
-<style>
-	body {
-		background-color: #cecece;
-		font-family: 'DM Sans', sans-serif;
-	}
-	.navigation {
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		min-height: 5vh;
-		background-color: #000;
-	}
-	.nav-links {
-		list-style: none;
-		border-bottom:none;
-	}
-
-	.nav-links a {
-		text-decoration: none;
-		color: #fff;
-		font-size: 20px;
-
-	}
-
-	.nav-links .nav-links-sub {
-		padding: 0 1rem;
-		background-color: #fed350;
-		border-radius: 4px;
-		color: #000;
-	}
-
-	.nav-links .nav-links-sub:hover {
-		background-color: #fff;
-	}
-	
-
-
-
-</style>
 <head>
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="/css/header.css" rel="stylesheet">
 	<title>MICE CINEMA</title>
 	<!-- link css and js here -->
 </head>

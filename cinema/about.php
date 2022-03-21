@@ -1,5 +1,5 @@
 <?php include('header.php');
-	$qry2= mysqli_query($con, "SELECT * FROM tbl_movie WHERE movie_id = '".$_GET['id']."'");
+	$qry2= mysqli_query($con, "SELECT * FROM movies WHERE movie_id = '".$_GET['id']."'");
 	$movie = mysqli_fetch_array($qry2);
 	?>
 
@@ -19,21 +19,21 @@
 					<a href="<?php echo $movie['video_url']; ?>">Watch Trailer</a>
 						
 					</div>
-					<?php $s = mysqli_query($con,"SELECT DISTINCT theatre_id FROM tbl_shows WHERE movie_id='".$movie['movie_id']."'");
+					<?php $s = mysqli_query($con,"SELECT DISTINCT theatre_id FROM shows WHERE movie_id='".$movie['movie_id']."'");
 					if (mysqli_num_rows($s))
 					{?>
 						<?php
 						while ($shw = mysqli_fetch_array($s))
 						{
-							$t = mysqli_query($con,"SELECT * FROM tbl_theatre WHERE id='".$shw['theatre_id']."'");
+							$t = mysqli_query($con,"SELECT * FROM cinemas WHERE id='".$shw['theatre_id']."'");
 							$theatre = mysqli_fetch_array($t);
 							?>
-							<?php $tr=mysqli_query($con,"SELECT * FROM tbl_shows WHERE movie_id='".$movie['movie_id']."' and theatre_id='".$shw['theatre_id']."'");
+							<?php $tr=mysqli_query($con,"SELECT * FROM shows WHERE movie_id='".$movie['movie_id']."' and theatre_id='".$shw['theatre_id']."'");
 
 
 							while($shh=mysqli_fetch_array($tr))
 								{
-									$ttm=mysqli_query($con,"SELECT  * FROM tbl_show_time WHERE st_id='".$shh['st_id']."'");
+									$ttm=mysqli_query($con,"SELECT  * FROM showing_time WHERE st_id='".$shh['st_id']."'");
 									$ttme=mysqli_fetch_array($ttm);
 												
 									?>

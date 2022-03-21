@@ -3,22 +3,22 @@ if(!isset($_SESSION['user']))
 {
 	header('location:login.php');
 }
-	$qry2=mysqli_query($con,"select * from tbl_movie where movie_id='".$_SESSION['movie']."'");
+	$qry2=mysqli_query($con,"select * from movies where movie_id='".$_SESSION['movie']."'");
 	$movie=mysqli_fetch_array($qry2);
 	?>
-<div class="content">
-	<div class="wrap">
-		<div class="content-top">
-				<div class="section group">
-					<div class="about span_1_of_2">	
+<div>
+	<div>
+		<div>
+				<div>
+					<div>	
 						<h3 style="color:black;" class="text-center">BOOKING HISTORY</h3>
 						<?php include('msgbox.php');?>
 						<?php
-				$bk=mysqli_query($con,"select * from tbl_bookings where user_id='".$_SESSION['user']."'");
+				$bk=mysqli_query($con,"select * from bookings where user_id='".$_SESSION['user']."'");
 				if(mysqli_num_rows($bk))
 				{
 					?>
-					<table class="table table-bordered">
+					<table>
 						<thead>
 						<th>Booking Id</th>
 						<th>Movie</th>
@@ -33,13 +33,13 @@ if(!isset($_SESSION['user']))
 						<?php
 						while($bkg=mysqli_fetch_array($bk))
 						{
-							$m=mysqli_query($con,"select * from tbl_movie where movie_id=(select movie_id from tbl_shows where s_id='".$bkg['show_id']."')");
+							$m=mysqli_query($con,"select * from movies where movie_id=(select movie_id from tbl_shows where s_id='".$bkg['show_id']."')");
 							$mov=mysqli_fetch_array($m);
-							$s=mysqli_query($con,"select * from tbl_screens where screen_id='".$bkg['screen_id']."'");
+							$s=mysqli_query($con,"select * from screens where screen_id='".$bkg['screen_id']."'");
 							$srn=mysqli_fetch_array($s);
-							$tt=mysqli_query($con,"select * from tbl_theatre where id='".$bkg['t_id']."'");
+							$tt=mysqli_query($con,"select * from cinemas where id='".$bkg['t_id']."'");
 							$thr=mysqli_fetch_array($tt);
-							$st=mysqli_query($con,"select * from tbl_show_time where st_id=(select st_id from tbl_shows where s_id='".$bkg['show_id']."')");
+							$st=mysqli_query($con,"select * from showing_time where st_id=(select st_id from tbl_shows where s_id='".$bkg['show_id']."')");
 							$stm=mysqli_fetch_array($st);
 							?>
 							<tr>
@@ -68,7 +68,6 @@ if(!isset($_SESSION['user']))
 									<?php  if($bkg['ticket_date']<date('Y-m-d'))
 									{
 										?>
-										<i class="glyphicon glyphicon-ok"></i>
 										<?php
 									}
 									else

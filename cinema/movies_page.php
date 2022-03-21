@@ -6,7 +6,7 @@
 			<center><h1>Movies in cinema</h1></center>
 			<?php
 			$today = date("Y-m-d");
-			$qry2 = mysqli_query($con,"SELECT * FROM tbl_movie ");
+			$qry2 = mysqli_query($con,"SELECT * FROM movies ");
 			while ($m=mysqli_fetch_array($qry2))
 			{
 				?>

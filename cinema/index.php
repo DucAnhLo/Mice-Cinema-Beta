@@ -15,7 +15,7 @@ include('header.php')
 
 
 		<?php
-		$qry3 = mysqli_query($con,"SELECT * FROM tbl_news LIMIT 5");
+		$qry3 = mysqli_query($con,"SELECT * FROM news LIMIT 5");
 		while ($n = mysqli_fetch_array($qry3))
 		{
 			?>

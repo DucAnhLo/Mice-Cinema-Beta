@@ -3,14 +3,14 @@ include('header.php');
 
 if ($_SERVER['REQUEST_METHOD']=="POST")
 {
-	//something posted
+
 	session_start();
 	$email = $_POST['username'];
 	$password = $_POST['password'];
 	if (!empty($email)&& !empty($password) &&!is_numeric($email))
 	{
-		//read from database
-		$query = "SELECT * FROM tbl_login WHERE username = '$email' limit 1";
+		
+		$query = "SELECT * FROM login WHERE username = '$email' limit 1";
 		$result = mysqli_query($con,$query);
 		if($result)
 		{	
@@ -39,23 +39,24 @@ if ($_SERVER['REQUEST_METHOD']=="POST")
 <html>
 <head>
 	<meta charset="utf-8">
+	<link href="/css/login.css" rel="stylesheet"> 
 	<title>LOGIN</title>
 </head>
 <body>
 	<h1>LOGIN</h1>
 	<div>
 		<form action="login.php" method="post">
-			<div>
+			<div class="input">
 				<label for="username">Username :</label>
-				<input type="username" name="username" required>
+				<input type="username" name="username" placeholder="Enter username" required>
 			</div>
-			<div>
+			<div class="input">
 				<label for="password">Password :</label>
-				<input type="password" name="password" required>
+				<input type="password" name="password"  placeholder="Enter password" required>
 			</div>
-			<div>
-				<button type="submit">Submit :</button>
-				<p>Create an account <a href="registration.php">Signup</a></p>
+			<div class="input">
+				<button type="submit">Submit </button>
+				<p>Create an account <a href="registration.php">Sign up</a></p>
 			</div>
 		</form>
 	</div>
