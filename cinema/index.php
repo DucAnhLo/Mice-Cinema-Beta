@@ -7,11 +7,13 @@ include('header.php')
 <html>
 <head>
 	<meta charset="utf-8">
+	<link href="/cinema/css/index.css" rel="stylesheet"> 
 	<title>MICE CINEMA</title>
 </head>
 <body>
-	<div>
-		<h2>Upcoming Movies</h2>
+<h2>Upcoming Movies</h2>
+<main>
+	<div class="main-section">
 
 
 		<?php
@@ -19,29 +21,23 @@ include('header.php')
 		while ($n = mysqli_fetch_array($qry3))
 		{
 			?>
-			<div>
-				<div>
+			<section>
+				<div class="movie-info">
 					<img src="admin/<?php echo $n['attachment'] ;?>">
+					<h3><strong><?php echo $n['name'];?></strong></h3>
+					<h3><strong>Cast :<?php echo $n['cast'];?></strong></h3>
+					<h3>Release date: <?php echo $n['news_date'];?></h3>
+					<h3><?php echo $n['description'];?></h3>
 				</div>
-				<div>
-					<div>
-						<span><strong><?php echo $n['name'];?></strong><br>
-						</span><strong>Cast :<?php echo $n['cast'];?></strong><br>
-						<div>
-							Release date: <?php echo $n['news_date'];?>
-						</div>
-						<span><?php echo $n['description'];?></span>
-					</div>
-				</div>
-			</div>
+			</section>
 			<?php
 		}
 		 ?>
-		 <div>
-		 	<?php include('movies.php');?>
-		 </div>
 	</div>
-
+	<div class="movie-in-cinema">
+		 	<?php include('movies.php');?>
+	</div>
+</main>	
 
 
 </body>

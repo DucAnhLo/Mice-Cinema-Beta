@@ -3,59 +3,53 @@ include('header.php');
 ?>
 
     
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="/cinema/css/addNewMovieAdmin.css" rel="stylesheet">
+</head>
+<body>
+  <section class="main-section">
+        <h1>
+          Add Upcoming Movie News
+        </h1>
+        <ol>
+          <li><a href="index.php"><i></i> Home</a></li>
+          <li >Add Movies News</li>
+        </ol> 
+          <div>
+              <form action="process_add_new_movies.php" method="post" id="form1">
+                
+                  <label >Movie name:</label>
+                  <input type="text" name="name" placeholder="Enter movie name"/>
 
 
-  <div>
-    <section>
-      <h1>
-        Add Upcoming Movie News
-      </h1>
-       
-      <ol>
-        <li><a href="index.php"><i></i> Home</a></li>
-        <li >Add Movies News</li>
-      </ol>
-    </section>
+                  <label>Cast:</label>
+                  <input type="text" name="cast" placeholder="Enter movie's cast"/> 
+                
 
-    <section >
+                  <label>Release Date:</label>
+                  <input type="date" name="date" /> 
+               
 
-      <div>
-        <div>
-            <form action="process_add_new_movies.php" method="post" id="form1">
-              <div>
-                <label >Movie name</label>
-                <input type="text" name="name" />
-
-              </div>
-              <div>
-                 <label>Cast</label>
-                <input type="text" name="cast" >
-              </div>
-              
-              <div>
-                <label>Release Date</label>
-                <input type="date" name="date" />
-              </div>
-              
-              <div>
-                <label>Description</label>
-                 <input type="text" name="description">
-              </div>
-              <div>
-                  <label>Images</label>
-              <input type="file"  name="attachment" placeholder="Images">
-              </div>
-              <div >
-                <button class="btn btn-success">Add News</button>
-              </div>
-        </form>
-        </div> 
-      </div>
+                  <label>Description:</label>
+                  <input type="text" name="description" placeholder="Enter movie description"/>
+                
+                
+                  <label>Images:</label>
+                  <input type="file"  name="attachment" placeholder="Images">
+                
+                  <button class="btn btn-success">Add News</button>
+              </form>
+          </div> 
+  </section>
+      
+     
      
 
-    </section>
- 
-  </div>
+
+</body>
+    
+
   <?php
 include('footer.php');
 ?>

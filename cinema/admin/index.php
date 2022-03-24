@@ -2,7 +2,10 @@
 include('header.php');
 ?>
 
-
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="/cinema/css/adminIndex.css" rel="stylesheet">
+</head>
   <div>
     <section >
       <h1>

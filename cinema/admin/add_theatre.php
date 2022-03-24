@@ -4,9 +4,12 @@ include('header.php');
 
 
     
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="/cinema/css/addTheaterAdmin.css" rel="stylesheet">
+</head>
 
-
-  <div >
+<main>
     <section >
       <h1>
         Add Theatre
@@ -25,18 +28,18 @@ include('header.php');
             <form action="process_add_theatre.php" method="post" id="form1">
               <div>
                 <label>Theatre Name</label>
-                <input type="text" name="name"/>
+                <input type="text" name="name" placeholder="Enter theater name"/>
                 
               </div>
               <div>
                 <label>Theatre Address</label>
-                <input type="text" name="address"/>
+                <input type="text" name="address" placeholder="Address"/>
                 
               </div>
               <div>
                 <label>Place</label>
 
-                <input type="text" name="place">
+                <input type="text" name="place" placeholder="Enter Place">
                 
               </div>
               <div>
@@ -78,8 +81,8 @@ include('header.php');
 
 
     </section>
-
-  </div>
+  </main>
+ 
   <?php
 include('footer.php');
 ?>

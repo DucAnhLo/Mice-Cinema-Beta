@@ -9,7 +9,7 @@ date_default_timezone_get("Europe/London");
 <head>
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-	<link href="/css/header.css" rel="stylesheet">
+	<link href="/cinema/css/header.css" rel="stylesheet">
 	<title>MICE CINEMA</title>
 	<!-- link css and js here -->
 </head>

@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST")
 <html>
 <head>
 	<meta charset="utf-8">
-	<link href="/css/login.css" rel="stylesheet"> 
+	<link href="/cinema/css/login.css" rel="stylesheet"> 
 	<title>LOGIN</title>
 </head>
 <body>

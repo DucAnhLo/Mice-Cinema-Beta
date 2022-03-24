@@ -1,0 +1,20 @@
+
+.main-section {
+    display: flex;
+    margin-right: 5rem;
+    padding: 2rem 3rem;
+}
+
+.main-section h2 {
+    font-size: 40px;
+    margin-right: 2rem;
+}
+
+.main-section .movie-info {
+    width: 50%;
+    background-color: white;
+    opacity: 0.7;
+    padding: 2rem 3rem;
+    border-radius: 9px;
+}
+

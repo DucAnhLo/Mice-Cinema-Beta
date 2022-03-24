@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST")
 <html>
 <head>
 	<meta charset="utf-8">
-	<link href="/css/register.css" rel="stylesheet">
+	<link href="/cinema/css/register.css" rel="stylesheet">
 	<title>Signup</title>
 </head>
 <body>

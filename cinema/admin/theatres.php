@@ -2,10 +2,13 @@
 include('header.php');
 ?>
 
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="/cinema/css/theaterListAdmin.css" rel="stylesheet">
+</head>
+  
 
-  <div>
-
-    <section >
+    <section>
       <h1>
         Theatres List
       </h1>
@@ -48,7 +51,7 @@ include('header.php');
 
     </section>
 
-  </div>
+
   <?php
 include('footer.php');
 ?>
