@@ -2,23 +2,20 @@
 	$qry2= mysqli_query($con, "SELECT * FROM movies WHERE movie_id = '".$_GET['id']."'");
 	$movie = mysqli_fetch_array($qry2);
 	?>
-
-<div>
-	<div>
+<head>
+	<link href="css/about.css" rel="stylesheet"> 
+</head>
 		<div>
-			<div>
+			<div class="about-body">
 				<h3><?php echo $movie['movie_name'];?></h3>
+				<img src="<?php echo $movie['image'];?>" alt=""/>
 				<div>
-					<div>
-						<img src="<?php echo $movie['image'];?>" alt=""/>
-					</div>
-					<div>
-					<p  style="font-size:15px"><b>Cast : </b><?php echo $movie['cast']; ?></p>
-					<p  style="font-size:15px"><b>Release Date : </b><?php echo date('d-M-Y',strtotime($movie['release_date'])); ?></p>
-					<p style="font-size:15px"><?php echo $movie['desc']; ?></p>
 					<a href="<?php echo $movie['video_url']; ?>">Watch Trailer</a>
-						
-					</div>
+					<table bgcolor="black">
+						<tr bgcolor="#cecece"><th>Cast :<?php echo $movie['cast']; ?></th></tr>
+						<tr bgcolor="#cecece"><th>Release Date : <?php echo date('d-M-Y',strtotime($movie['release_date'])); ?></th></tr>
+						<tr bgcolor="#cecece"><th><?php echo $movie['desc']; ?></th></tr>
+					</table>
 					<?php $s = mysqli_query($con,"SELECT DISTINCT cinema_id FROM performances WHERE movie_id='".$movie['movie_id']."'");
 					if (mysqli_num_rows($s))
 					{?>
@@ -38,7 +35,7 @@
 												
 									?>
 												
-									<a href="check_login.php?show=<?php echo $shh['performance_id'];?>&movie=<?php echo $shh['movie_id'];?>&theatre=<?php echo $shw['cinema_id'];?>"><button >BOOK NOW</button></a>
+									<a href="check_login.php?show=<?php echo $shh['performance_id'];?>&movie=<?php echo $shh['movie_id'];?>&theatre=<?php echo $shw['cinema_id'];?>">BOOK NOW</a>
 									<?php
 								}
 						?>
@@ -50,7 +47,7 @@
 				else
 				{
 					?>
-					<h3>Currently there are no any shows available</h3>
+					<h4>Currently there are no any shows available</h4>
 					<p>Please check back later!</p>
 					<?php
 				}
@@ -58,8 +55,8 @@
 
 				</div>
 
-				<?php include('movies.php');?>
 			</div>
 		</div>
 	</div>
-</div>
+
+	<?php include('movies.php');?>

@@ -7,14 +7,16 @@ include('header.php')
 <html>
 <head>
 	<meta charset="utf-8">
-	<link href="css/index.css" rel="stylesheet"> 
+	<link href="css/index1.css" rel="stylesheet"> 
 	<title>MICE CINEMA</title>
 </head>
 <body>
-
+	<div>
+		<?php include('movies.php');?>
+	</div> 
 <main>
 	<h2>Event for only members</h2>
-	<div class="main-section">
+	<div class="main-movie-section">
 		<?php 
 	$today = date("Y-m-d");
 	$qry2 = mysqli_query($con,"SELECT * FROM movies WHERE event_id != '0' ORDER BY rand() limit 10");
@@ -43,7 +45,7 @@ include('header.php')
 		
 	</div>
 	<h2>Upcoming Movies</h2>
-	<div class="main-section">
+	<div class="upcoming">
 
 
 		<?php
@@ -52,23 +54,24 @@ include('header.php')
 		{
 			?>
 			<section>
-				<div class="movie-info">
+				<div class="upcoming-info">
 					<img src="<?php echo $n['attachment'] ;?>">
-					<h3><strong><?php echo $n['name'];?></strong></h3>
-					<h3><strong>Cast :<?php echo $n['cast'];?></strong></h3>
-					<h3>Release date: <?php echo $n['news_date'];?></h3>
-					<h3><?php echo $n['description'];?></h3>
+					<h3 class="movie-name"><strong><?php echo $n['name'];?></strong></h3>
+					<div class="movie-detail">
+						<h3><strong>Cast :<?php echo $n['cast'];?></strong></h3>
+						<h3>Release date: <?php echo $n['news_date'];?></h3>
+						<h3><?php echo $n['description'];?></h3>
+					</div> 
 				</div>
 			</section>
 			<?php
 		}
 		 ?>
 	</div>
-	<div class="movie-in-cinema">
-		 	<?php include('movies.php');?>
-	</div>
 </main>	
 
 
 </body>
 </html>
+
+

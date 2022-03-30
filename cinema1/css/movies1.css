@@ -1,0 +1,81 @@
+
+
+h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+
+.main-movie-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-movie-section .movie-info {
+    width: 70%;
+    padding: 2rem 3rem;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.main-movie-section .movie-info img {
+    height: 40rem;
+    width: 30rem;
+    text-align: center;
+    object-fit: cover;
+}
+
+.main-movie-section .movie-info a {
+    text-decoration: none;
+    /* margin: 2rem 0; */
+    text-align: center;
+
+}
+
+.main-movie-section .movie-info .movie-name {
+    /* background-color: #fed350; */
+    color: black;
+    font-size: 2rem;
+} 
+
+.movie-info .movie-detail {
+    text-align: left;
+    margin: 3rem;
+}
+
+
+.movie-info table {
+    margin-top: 2rem;
+}
+.movie-info table th {
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.book-now {
+    padding: 0 1rem;
+    background-color: #fed350;
+    border-radius: 9px;
+    color: #000;
+    width: 150px;
+    height: 50px;
+    border: none;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+ .book-now:hover{
+    background-color: lightcoral;
+}
+
+.book-now a {
+    color: black;
+}

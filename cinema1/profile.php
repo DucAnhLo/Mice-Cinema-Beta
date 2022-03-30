@@ -5,20 +5,21 @@ if(!isset($_SESSION['user']))
 }
 
 ?>
-<div>
-	<div>
+<head>
+	<link href="css/profile.css" rel="stylesheet"> 
+</head>
 		<div>
 				<div>
-					<div>	
-						<h3 style="color:black;" class="text-center">BOOKING HISTORY</h3>
+					<div class="profile-body">	
+						<h3 style="color:black;" class="text-center">Booking History</h3>
 						<?php include('msgbox.php');?>
 						<?php
 				$bk=mysqli_query($con,"select * from bookings where user_id='".$_SESSION['user']."'");
 				if(mysqli_num_rows($bk))
 				{
 					?>
-					<table>
-						<thead>
+					<table bgcolor="black">
+						<thead bgcolor="#cecece">
 						<th>Booking Id</th>
 						<th>Movie</th>
 						<th>Theatre</th>
@@ -28,7 +29,7 @@ if(!isset($_SESSION['user']))
 						<th>Amount</th>
 						<th></th>
 						</thead>
-						<tbody>
+						<tbody bgcolor="#cecece">
 						<?php
 						while($bkg=mysqli_fetch_array($bk))
 						{
@@ -97,5 +98,4 @@ if(!isset($_SESSION['user']))
 			</div>
 				<div class="clear"></div>		
 			</div>
-	</div>
-</div>
+

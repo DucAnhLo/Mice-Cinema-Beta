@@ -16,6 +16,7 @@ date_default_timezone_get("Europe/London");
 <body>
 	<div>
 		<ul class="navigation">
+			<p><b>MICE</b> Cinema</p>
 			<li class = "nav-links"><a href="index.php">Home</a></li>
 			<li class = "nav-links"><a href="movies_page.php">Movies</a></li>
 			 <li class = "nav-links"><?php if(isset($_SESSION['user'])){

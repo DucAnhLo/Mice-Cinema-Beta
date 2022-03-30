@@ -1,5 +1,5 @@
 <?php
-include('header.php');
+// include('header.php');
 include('functions.php');
 if ($_SERVER['REQUEST_METHOD']=="POST")
 {
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST")
 	<title>Signup</title>
 </head>
 <body>
-	<h1>SIGN UP</h1>
+	<h2>SIGN UP</h2>
 		<form action="registration.php" method="post">
 			<div class="input">
 				<label for="email">Email :</label>
