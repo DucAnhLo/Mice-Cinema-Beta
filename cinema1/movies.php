@@ -21,9 +21,9 @@
 						<div class="movie-detail">
 							<a class="movie-name" href="about.php?id=<?php echo $m['movie_id'];?>"><h1><?php echo $m['movie_name'];?></h1></a>
 							<table bgcolor="black">
-								<tr bgcolor ="#cecece"><th>Release Date: <?php echo $m['release_date'];?></th></tr>
-								<tr bgcolor ="#cecece"><th>Cast: <?php echo $m['cast'];?></th></tr>
-								<tr bgcolor ="#cecece"><th>Description: <?php echo $m['desc'];?></th></tr>
+								<tr bgcolor ="lightgrey"><th>Release Date: <?php echo $m['release_date'];?></th></tr>
+								<tr bgcolor ="lightgrey"><th>Cast: <?php echo $m['cast'];?></th></tr>
+								<tr bgcolor ="lightgrey"><th>Description: <?php echo $m['desc'];?></th></tr>
 							</table>
 							<button class ="book-now"><a href="about.php?id=<?php echo $m['movie_id'];?>">Book Now</a></button>
 						</div>

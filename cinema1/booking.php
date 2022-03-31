@@ -6,25 +6,23 @@ if(!isset($_SESSION['user']))
 	$qry2=mysqli_query($con,"select * from movies where movie_id='".$_SESSION['movie']."'");
 	$movie=mysqli_fetch_array($qry2);
 	?>
-<div >
-	<div>
+<head>
+	<link href="css/booking.css" rel="stylesheet"> 
+</head>
 		<div>
 				<div>
-					<div>	
+					<div class="booking-body">	
 						<h3><?php echo $movie['movie_name']; ?></h3>	
-							<div>	
-								<div>
-									<img src="<?php echo $movie['image']; ?>" alt=""/>
-								</div>
-								<div>
-									<p style="font-size:15px"><b>Cast : </b><?php echo $movie['cast']; ?></p>
-									<p style="font-size:15px"><b>Release Date : </b><?php echo date('d-M-Y',strtotime($movie['release_date'])); ?></p>
-									<p style="font-size:15px"><?php echo $movie['desc']; ?></p>
-									<a href="<?php echo $movie['video_url']; ?>">Watch Trailer</a>
-								</div>
+							<div>
+								<img src="<?php echo $movie['image']; ?>" alt=""/>
+								<!-- <table bgcolor="black">
+									<tr bgcolor="#cecece"><th>Cast :<?php echo $movie['cast']; ?></th></tr>
+									<tr bgcolor="#cecece"><th>Release Date : <?php echo date('d-M-Y',strtotime($movie['release_date'])); ?></th></tr>
+									<tr bgcolor="#cecece"><th><?php echo $movie['desc']; ?></th></tr>
+								</table> -->
 								<div></div>
 							</div>
-							<table>
+							<table class="booking-table" bgcolor="black">
 							<?php
 								$s=mysqli_query($con,"select * from performances where performance_id='".$_SESSION['show']."'");
 								$shw=mysqli_fetch_array($s);
@@ -32,8 +30,8 @@ if(!isset($_SESSION['user']))
 									$t=mysqli_query($con,"select * from cinemas where id='".$shw['cinema_id']."'");
 									$theatre=mysqli_fetch_array($t);
 									?>
-									<tr>
-										<td>
+									<tr bgcolor="#cecece">
+										<td  bgcolor="#cecece">
 											Theatre
 										</td>
 										<td>
@@ -41,10 +39,10 @@ if(!isset($_SESSION['user']))
 										</td>
 										</tr>
 										<tr>
-											<td>
+											<td  bgcolor="#cecece">
 												Screen
 											</td>
-										<td>
+										<td  bgcolor="#cecece">
 											<?php 
 												$ttm=mysqli_query($con,"select  * from showing_time where st_id='".$shw['pt_id']."'");
 												
@@ -58,7 +56,7 @@ if(!isset($_SESSION['user']))
 												?>
 										</td>
 									</tr>
-									<tr>
+									<tr bgcolor="#cecece">
 										<td>
 											Date
 										</td>
@@ -92,16 +90,16 @@ if(!isset($_SESSION['user']))
 							</div>
 										</td>
 									</tr>
-									<tr>
-										<td>
+									<tr bgcolor="#cecece">
+										<td  bgcolor="#cecece">
 											Show Time
 										</td>
 										<td>
 											<?php echo date('h:i A',strtotime($ttme['start_time']))." ".$ttme['name'];?> Show
 										</td>
 									</tr>
-									<tr>
-										<td>
+									<tr bgcolor="#cecece">
+										<td  bgcolor="#cecece">
 											Number of Seats
 										</td>
 										<td>
@@ -112,8 +110,8 @@ if(!isset($_SESSION['user']))
 												<input type="hidden" name="date" value="<?php echo $date;?>"/>
 										</td>
 									</tr>
-									<tr>
-										<td colspan="2"><?php if($avl[0]==$screen['seats']){?><button type="button" class="btn btn-danger" style="width:100%">No available seat</button><?php } else { ?>
+									<tr bgcolor="#cecece">
+										<td  bgcolor="#cecece" colspan="2"><?php if($avl[0]==$screen['seats']){?><button type="button" class="btn btn-danger" style="width:100%">No available seat</button><?php } else { ?>
 										<button type="submit" style="width:100%">Book Now</button>
 										<?php } ?>
 										</form></td>
@@ -128,5 +126,4 @@ if(!isset($_SESSION['user']))
 			</div>
 				<div class="clear"></div>		
 			</div>
-	</div>
-</div>
+

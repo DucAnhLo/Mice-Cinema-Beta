@@ -22,6 +22,10 @@
     margin: 2rem 0;
 }
 
+.about-body .booking-table {
+    align-items: left;
+}
+
 .about-body table th, .about-body table td {
     padding: 2rem;
 }

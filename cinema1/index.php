@@ -7,16 +7,13 @@ include('header.php')
 <html>
 <head>
 	<meta charset="utf-8">
-	<link href="css/index1.css" rel="stylesheet"> 
+	<link href="css/index1.css" rel="stylesheet">
 	<title>MICE CINEMA</title>
 </head>
 <body>
-	<div>
-		<?php include('movies.php');?>
-	</div> 
 <main>
 	<h2>Event for only members</h2>
-	<div class="main-movie-section">
+	<div class="events">
 		<?php 
 	$today = date("Y-m-d");
 	$qry2 = mysqli_query($con,"SELECT * FROM movies WHERE event_id != '0' ORDER BY rand() limit 10");
@@ -27,13 +24,18 @@ include('header.php')
 		
 				<?php 
 				?>
-			<div class="movie-info">
-				<a  href="about.php?id=<?php echo $m['movie_id'];?>"><img src="<?php echo $m['image'];?>"></a>
-				<a href="about.php?id=<?php echo $m['movie_id'];?>"><h1><?php echo $m['movie_name'];?></h1></a>
-				<h3>Release Date: <?php echo $m['release_date'];?></h3>
-				<h3>Cast: <?php echo $m['cast'];?></h3>
-				<h3>Description: <?php echo $m['desc'];?></h3>
-			</div>
+				<div class="movie-info">
+						<a  href="about.php?id=<?php echo $m['movie_id'];?>"><img src="<?php echo $m['image'];?>"></a>
+						<div class="movie-detail">
+							<a class="movie-name" href="about.php?id=<?php echo $m['movie_id'];?>"><h1><?php echo $m['movie_name'];?></h1></a>
+							<table bgcolor="black">
+								<tr bgcolor ="lightgrey"><th>Release Date: <?php echo $m['release_date'];?></th></tr>
+								<tr bgcolor ="lightgrey"><th>Cast: <?php echo $m['cast'];?></th></tr>
+								<tr bgcolor ="lightgrey"><th>Description: <?php echo $m['desc'];?></th></tr>
+							</table>
+							<button class ="book-now"><a href="about.php?id=<?php echo $m['movie_id'];?>">Book Now</a></button>
+						</div>
+				</div>
 				
 		<?php 
 	}
@@ -53,25 +55,29 @@ include('header.php')
 		while ($n = mysqli_fetch_array($qry3))
 		{
 			?>
-			<section>
-				<div class="upcoming-info">
+			<section class="movie-info">
 					<img src="<?php echo $n['attachment'] ;?>">
-					<h3 class="movie-name"><strong><?php echo $n['name'];?></strong></h3>
 					<div class="movie-detail">
-						<h3><strong>Cast :<?php echo $n['cast'];?></strong></h3>
-						<h3>Release date: <?php echo $n['news_date'];?></h3>
-						<h3><?php echo $n['description'];?></h3>
-					</div> 
-				</div>
+					<a class="movie-name"><h1><?php echo $n['name'];?></h1></a>
+					<table bgcolor="black">
+						<tr bgcolor ="lightgrey"><th>Release Date: <?php echo $n['news_date'];?></th></tr>
+						<tr bgcolor ="lightgrey"><th>Cast: <?php echo $n['cast'];?></th></tr>
+						<tr bgcolor ="lightgrey"><th>Description: <?php echo $n['description'];?></th></tr>
+					</table>
+					</div>
 			</section>
 			<?php
 		}
 		 ?>
 	</div>
+	<div>
+		<?php include('movies.php');?>
+	</div> 
 </main>	
 
 
 </body>
 </html>
+
 
 

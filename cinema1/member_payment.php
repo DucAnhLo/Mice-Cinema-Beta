@@ -8,29 +8,59 @@ if(!isset($_SESSION['user']))
 </div>
 <div >
 	<div >
-		<div >
-			<h3>Payment</h3>
-			<form action="process_member_payment.php" method="post" id="form1">
-			     <div >
+		<div  style=" display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;">
+			<h3 style=" font-size: 2rem; margin-top:5rem;">Payment</h3>
+			<form style="background-color: white;
+                        border-radius: 9px;
+                        margin: 0 20rem;
+                        width: 20%;
+                        box-shadow: 0 15px 80px rgba(0, 0, 0, 0.25);
+                        padding: 2rem 3rem; display:flex; flex-direction:column" action="process_member_payment.php" method="post" id="form1">
+			     
                     <label >Name on Card</label>
-                    <input type="text" name="name">
-                </div>
-                <div >
+                    <input sytle="height: 20px;
+                                width: 100%;
+                                flex: 1;
+                                align-items: left;
+                                margin-top: 10px;" type="text" name="name">
+                
+                
                     <label >Card Number</label>
-                    <input type="text" name="number" required title="Enter 16 digit card number">
+                    <input sytle="height: 20px;
+                                width: 100%;
+                                flex: 1;
+                                align-items: left;
+                                margin-top: 10px;" type="text" name="number" required title="Enter 16 digit card number">
   
-                </div>      
-                <div >
+                     
+                
                     <label >Expiration date</label>
-                    <input type="date" name="date">
-                </div>
-                <div >
+                    <input sytle="height: 20px;
+                                width: 100%;
+                                flex: 1;
+                                align-items: left;
+                                margin-top: 10px;" type="date" name="date">
+               
+                
                     <label >CVV</label>
-                    <input type="text" name="cvv">
-                </div>
-                <div >
-                    <button type="submit">Make Payment</button>
-                </div>
+                    <input sytle="height: 20px;
+                                width: 100%;
+                                flex: 1;
+                                align-items: left;
+                                margin-top: 10px;" type="text" name="cvv">
+            
+                    <button style=" padding: 0 1rem;
+                            background-color: #fed350;
+                            border-radius: 9px;
+                            color: #000;
+                            width: 100px;
+                            height: 40px;
+                            border: none;
+                            margin-top: 2rem;" type="submit">Make Payment</button>
+               
             </form>
 </div>
 </div>

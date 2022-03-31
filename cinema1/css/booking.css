@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.booking-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.booking-body img {
+    height: 60rem;
+    width: 70rem;
+    margin: 2rem 0;
+}
+
+.booking-body h3 {
+    font-size: 4rem;
+    margin: 4rem 0;
+}
+
+.booking-body table  {
+    text-align: left;
+    margin: 2rem 0;
+}
+
+.booking-body table th, .booking-body table td {
+    padding: 2rem;
+}
